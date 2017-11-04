@@ -8,9 +8,8 @@ outputDir = sys.argv[4]
 index = sys.argv[5]
 
 def run_miso(bam, output, pickle, readlength, index):
-    command = "/cm/shared/apps/slurm/15.08.13/bin/srun -p longq7 /home/groups/caputi-lab/fastmiso-latest/bin/exon_utils --get-const-exons " + index + " --min-exon-size 1000 --output-dir " + output + "ex/"
+    command = "/cm/shared/apps/slurm/15.08.13/bin/srun -p longq7 exon_utils --get-const-exons " + index + " --min-exon-size 1000 --output-dir " + output + "ex/"
     print command
-    #command = "'srun -p longq /home/groups/caputi-lab/fastmiso/bin/exon_utils --get-const-exons " + index + " --min-exon-size 1000 --output-dir " + output + "ex/'"
     command = str(command)
     #return_code = subprocess.call(command, shell=True)
     return_code = subprocess.call(command, shell=True)
